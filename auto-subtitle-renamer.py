@@ -1,8 +1,8 @@
 import os
 
-#Here you gotta input .mkv, .mp4, .wmv and so on
+#Here you gotta input .mkv or .mp4 or .wmv and so on
 vid_type = input('Video archive extension: ')
-#Here you gotta input .srt, .ass, .ssa and so on
+#Here you gotta input .srt or .ass or .ssa and so on
 sub_type = input('Subtitle archive extension: ')
 
 dirpath = os.getcwd()
