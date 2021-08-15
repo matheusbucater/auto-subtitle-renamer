@@ -3,6 +3,7 @@ import sys
 
 POSSIBLE_VIDEOS_EXTENSIONS = ['.mkv', '.mp4', '.wmv', '.mov', '.avi']
 POSSIBLE_SUBTITLES_EXTENSIONS = ['.srt', '.ass', '.ssa']
+CURRENT_DIRECTORY = os.getcwd()
 
 
 def getFilesGivenAnExtension(file_list, extension):
@@ -65,3 +66,5 @@ def main(directory):
 		subtitles_extensions = getListWithSubtitlesExtensions(subtitles)
 
 		renameSubtitles(videos, subtitles, subtitles_extensions)
+
+main(CURRENT_DIRECTORY)
