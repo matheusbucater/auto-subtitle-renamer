@@ -10,6 +10,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 __pycache__
+dist/
 build/
 develop-eggs/
 downloads/
@@ -103,3 +104,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+dist/ASR No UI.exe
