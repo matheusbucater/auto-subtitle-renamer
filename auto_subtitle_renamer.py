@@ -5,8 +5,12 @@ import tests
 POSSIBLE_VIDEOS_EXTENSIONS = ['.mkv', '.mp4', '.wmv', '.mov', '.avi']
 POSSIBLE_SUBTITLES_EXTENSIONS = ['.srt', '.ass', '.ssa']
 CURRENT_DIRECTORY = os.getcwd() + '/'
-TESTS_DIRECTORY = #PUT YOUR TESTS DIRECTORY HERE	
 
+TESTS_DIRECTORY = CURRENT_DIRECTORY + 'tests/'	
+
+def checkWithTestFolderExists():
+	if not os.path.exists(TESTS_DIRECTORY):
+		os.mkdir(TESTS_DIRECTORY)
 
 def getListWithAllExtensions(file_list):
 	list_with_all_extensions = []
@@ -75,11 +79,12 @@ def main(directory):
 		renameSubtitles(directory, videos, subtitles, subtitles_extensions)
 		
 def validationAuxFunction(test_directory):
+	checkWithTestFolderExists()
 	tests.deleteTestFiles(test_directory)
 	tests.createTestFiles(5, test_directory)
 	main(test_directory)
 	tests.validateTests(5, test_directory)
 
 
-# validationAuxFunction(TESTS_DIRECTORY)
-# main(CURRENT_DIRECTORY)
+validationAuxFunction(TESTS_DIRECTORY)
+main(CURRENT_DIRECTORY)
