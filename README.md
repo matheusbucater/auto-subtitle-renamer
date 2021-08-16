@@ -4,7 +4,7 @@
 So if you have a 'hello world s02e04.mkv' and a 'hello world s02e04 webrip.srt' in your directory, the program will rename the 'hello world s02e04 webrip.srt' to 'hello world s02e04.srt'  
 Donwload: [here](https://github.com/matheusbucater/auto-subtitle-renamer/releases)  
   
-**If you want to support this project, feel free to donate using the button on the top or with the QR CODE bellow**  
+**If you want to support this project, feel free to donate using the button on the top or the QR CODE bellow**  
   
 ![alt text](https://github.com/matheusbucater/auto-subtitle-renamer/blob/master/resources/QR%20Code.png)
 
