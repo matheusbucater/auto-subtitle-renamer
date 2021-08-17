@@ -4,19 +4,20 @@ import tests
 
 POSSIBLE_VIDEOS_EXTENSIONS = ['.mkv', '.mp4', '.wmv', '.mov', '.avi']
 POSSIBLE_SUBTITLES_EXTENSIONS = ['.srt', '.ass', '.ssa']
-CURRENT_DIRECTORY = os.getcwd() + '/'
+CURRENT_DIRECTORY = os.getcwd()
 
-TESTS_DIRECTORY = CURRENT_DIRECTORY + 'tests/'	
+TESTS_DIRECTORY = os.path.join(CURRENT_DIRECTORY, 'tests')
 
-def checkWithTestFolderExists():
-	if not os.path.exists(TESTS_DIRECTORY):
-		os.mkdir(TESTS_DIRECTORY)
+def checkIfTestFolderExists(test_directory):
+	print('\nCreating ', test_directory, '...')
+	if not os.path.exists(test_directory):
+		os.mkdir(test_directory)
 
 def getListWithAllExtensions(file_list):
 	list_with_all_extensions = []
 	for file in file_list:
 		list_with_all_extensions.append(os.path.splitext(file)[1])
-	return list_with_all_extensions
+	return list(filter(None, list_with_all_extensions))
 
 def getTuppleWithVideoAndSubtitleExtensions(extension_list):
 	aux_list = extension_list
@@ -57,7 +58,8 @@ def renameSubtitles(directory, videos_without_extensions_list, subtitles_list, s
 	for i in range(len(videos_without_extensions_list)):
 		videos_with_subtitles_extensions.append(videos_without_extensions_list[i] + subtitles_extensions_list[i])
 	for i in range(len(subtitles_list)):
-		os.renames(directory + subtitles_list[i], directory + videos_with_subtitles_extensions[i])
+		print(subtitles_list[i], ' ---> ', videos_with_subtitles_extensions[i])
+		os.renames(os.path.join(directory, subtitles_list[i]), os.path.join(directory, videos_with_subtitles_extensions[i]))
 
 def main(directory):
 	files_list = os.listdir(directory)
@@ -66,25 +68,33 @@ def main(directory):
 	videos_extensions, subtitles_extensions = getTuppleWithVideoAndSubtitleExtensions(extensions_files_list)
 
 	videos = getVideoFiles(files_list, videos_extensions)
+	print('\nScanning video files...')
+	print(*videos, '\n', sep=", ",)	
 
 	subtitles = getSubtitleFiles(files_list, subtitles_extensions)
+	print('\nScanning subtitle files...')
+	print(*subtitles, '\n', sep=", ")
 
 	if len(videos) != len(subtitles):
-		print('A QUANTIDADE DE ARQUIVOS DE VIDEO É DIFERENTE DA QUANTIDADE DE ARQUIVOS DE LEGENDA')
+		raise Exception('A QUANTIDADE DE ARQUIVOS DE VIDEO É DIFERENTE DA QUANTIDADE DE ARQUIVOS DE LEGENDA')
 		sys.exit()
 		
 	else:
 		videos = getVideoFileNameWithoutExtension(videos)
 
 		renameSubtitles(directory, videos, subtitles, subtitles_extensions)
+
 		
 def validationAuxFunction(test_directory):
-	checkWithTestFolderExists()
+	# checkIfTestFolderExists(test_directory)
+	print('Deleting all files on ', os.path.abspath(test_directory), '...')
 	tests.deleteTestFiles(test_directory)
+	print('Creating test files...')
 	tests.createTestFiles(5, test_directory)
+	print('\nExecuting and validating all tests:')
 	main(test_directory)
 	tests.validateTests(5, test_directory)
 
 
-validationAuxFunction(TESTS_DIRECTORY)
-main(CURRENT_DIRECTORY)
+# validationAuxFunction(TESTS_DIRECTORY)
+# main(CURRENT_DIRECTORY)
