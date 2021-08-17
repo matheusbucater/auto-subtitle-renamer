@@ -7,7 +7,7 @@ import sys
 @Gooey(
 	advanced=True,
     program_name="Auto Subtitle Renamer",
-    
+    image_dir='C:/Users/mathe/Documents/GitHub/auto-subtitle-renamer/resources',
 )
 def main():
 

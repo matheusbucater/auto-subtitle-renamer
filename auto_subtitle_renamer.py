@@ -86,7 +86,7 @@ def main(directory):
 
 		
 def validationAuxFunction(test_directory):
-	# checkIfTestFolderExists(test_directory)
+	checkIfTestFolderExists(test_directory)
 	print('Deleting all files on ', os.path.abspath(test_directory), '...')
 	tests.deleteTestFiles(test_directory)
 	print('Creating test files...')
@@ -96,5 +96,6 @@ def validationAuxFunction(test_directory):
 	tests.validateTests(5, test_directory)
 
 
+# uncomment this with you want to run .py in terminal
 # validationAuxFunction(TESTS_DIRECTORY)
 # main(CURRENT_DIRECTORY)
