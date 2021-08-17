@@ -4,7 +4,7 @@
 [en](https://github.com/matheusbucater/auto-subtitle-renamer/blob/master/README.en.md), [pt-BR](https://github.com/matheusbucater/auto-subtitle-renamer/blob/master/README.pt-BR.md).  
 
 **A small project that renames the subtitle files to match the video files.**  
-So if you have a 'hello world s02e04.mkv' and a 'hello world s02e04 webrip.srt' in your directory, the program will rename the 'hello world s02e04 webrip.srt' to 'hello world s02e04.srt'  
+So if you have a 'hello world s02e04.mkv' and a 'hello world sub s02e04-webrip.srt' in your directory, the program will rename the 'hello world sub s02e04-webrip.srt' to 'hello world s02e04.srt'  
 Donwload: [here](https://github.com/matheusbucater/auto-subtitle-renamer/releases)  
   
 **If you want to support this project, feel free to donate using the button on the top or the QR CODE bellow**  
