@@ -1,7 +1,7 @@
 # auto-subtitle-renamer
 [![Doe](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=86XUMMWCBSTZY)  
 **Um pequeno projeto que renomeia os seus arquivos de legenda para corresponder aos seus arquivos de video.**  
-Então, se você tiver um video 'hello world s01e42.mkv' e um legenda 'hello world s01e42-webrip.srt' na sua pasta, o programa irá renomear a legenda 'hello world s01e42-webrip.srt' para 'hello world s01e42.srt'.  
+Então, se você tiver um video 'hello world s01e42.mkv' e um legenda 'hello world sub s01e42-webrip.srt' na sua pasta, o programa irá renomear a legenda 'hello world sub s01e42-webrip.srt' para 'hello world s01e42.srt'.  
 Baixe: [Aqui](https://github.com/matheusbucater/auto-subtitle-renamer/releases)  
   
 **Se você quiser apoiar esse projeto, sinta-se avontade para doar usando o botão no topo ou com o QR Code abaixo**  
