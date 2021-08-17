@@ -13,7 +13,7 @@ def main():
 
 	parser = GooeyParser(description='Make sure all of your video files and subtitle files are ordered by season/episode')
 	parser.add_argument('--folder', required=True, metavar='Folder', help='Choose the folder that contains your files', widget='DirChooser')
-	parser.add_argument('--enable_tests', default=False, action="store_true", required=False, metavar='Enable Tests', help='The program will create or use your chosen a test folder', widget='BlockCheckbox')
+	parser.add_argument('--enable_tests', default=False, action="store_true", required=False, metavar='Enable Tests', help='The program will create or use your chosen test folder', widget='BlockCheckbox')
 	parser.add_argument('--tests_folder', required=False, metavar='Tests Folder', help='Choose the directory that the tests folder will be created\n(its not necessary to specify a directory, you can leave this blank)', widget='DirChooser')
 
 	args = parser.parse_args()
