@@ -9,7 +9,7 @@ Donwload: [here](https://github.com/matheusbucater/auto-subtitle-renamer/release
   
 **If you want to support this project, feel free to donate using the button on the top or the QR CODE bellow**  
   
-![alt text](https://github.com/matheusbucater/auto-subtitle-renamer/blob/master/resources/QR%20Code.png)
+![alt text](https://github.com/matheusbucater/auto-subtitle-renamer/blob/master/resources/qr_code.png)
 
   
 **Important Stuff**  
